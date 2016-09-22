@@ -69,4 +69,20 @@ public class PawnTest {
         Set<Position> possible = pawn.getNextPositions(origin);
         assertEquals("Should not have any possible moves", 2, possible.size());
     }
+
+    @Test
+    public void testOneStepInSecondMove() {
+        gameState.placePiece(new Pawn(Player.White), "a2");
+        gameState.makeMove("a2 a3");
+        Set<Position> possible = pawn.getNextPositions(new Position("a3"));
+        assertEquals("Should have only one move", 1, possible.size());
+    }
+
+    @Test
+    public void testTwoStepsInSecondMove() {
+        gameState.placePiece(new Pawn(Player.White), "a2");
+        gameState.makeMove("a2 a4");
+        Set<Position> possible = pawn.getNextPositions(new Position("a3"));
+        assertEquals("Should have only one move", 1, possible.size());
+    }
 }

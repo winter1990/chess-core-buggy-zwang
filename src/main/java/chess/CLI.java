@@ -53,7 +53,7 @@ public class CLI {
             Player currentPlayer = gameState.getCurrentPlayer();
 
             if (gameState.isGameOver()) {
-                writeOutput("GAME OVER!\n\nThe winner is: ");
+                writeOutput("GAME OVER!\n\nThe winner is: " + currentPlayer.other());
             } else if (gameState.isInCheck()) {
                 writeOutput(currentPlayer + " is in check");
             } else {

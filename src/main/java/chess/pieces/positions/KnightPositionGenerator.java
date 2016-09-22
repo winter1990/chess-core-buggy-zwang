@@ -44,7 +44,7 @@ public class KnightPositionGenerator extends PiecePositionGenerator {
         if (step != null) {
             step = step.step(East);
             if (step != null) {
-                addIfGoodPosition(possible, step.step(East), step.step(West));
+                addIfGoodPosition(possible, step.step(North), step.step(South));
             }
         }
 

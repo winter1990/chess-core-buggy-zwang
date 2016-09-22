@@ -57,8 +57,8 @@ public class CLITest {
         List<String> output = captureOutput();
 
         assertEquals("Should have had 6 calls to print strings", 6, output.size());
-        assertEquals("It should have printed the board first", 700, output.get(2).length());
-        assertEquals("It should have printed the board again", 700, output.get(4).length());
+        assertEquals("It should have printed the board first", 719, output.get(2).length());
+        assertEquals("It should have printed the board again", 719, output.get(4).length());
     }
 
     @Test

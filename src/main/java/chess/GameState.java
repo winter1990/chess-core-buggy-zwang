@@ -321,6 +321,7 @@ public class GameState {
                     return false;
                 }
             }
+            return true;
         }
         return false;
     }

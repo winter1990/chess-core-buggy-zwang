@@ -32,6 +32,16 @@ public class PawnPositionGenerator extends PiecePositionGenerator {
             attackDir.add(Direction.SouthWest);
         }
 
+        // Black and White players should be considered separately
+        final int row = origin.getRow();
+        final char col = origin.getColumn();
+        int maxStepsCanTake;
+
+        if (row == (player.equals(Player.White) ? 2 : 7)) {
+            maxStepsCanTake = 2;
+        } else {
+            maxStepsCanTake = 1;
+        }
 
         Set<Position> positions = new HashSet<Position>();
 
@@ -41,7 +51,7 @@ public class PawnPositionGenerator extends PiecePositionGenerator {
             positions.add(oneStep);
 
             Position twoStep = oneStep.step(walkDir);
-            if (twoStep != null && isEmpty(twoStep)) {
+            if (twoStep != null && isEmpty(twoStep) && (maxStepsCanTake == 2)) {
                 positions.add(twoStep);
             }
         }
